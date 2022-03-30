@@ -1,1 +1,2 @@
-git pull origin main
+git pull origin main --allow-unrelated-histories
+timeout 5
