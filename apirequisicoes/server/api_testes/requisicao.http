@@ -1,0 +1,51 @@
+# Obter a lista de usuários
+GET http://localhost:3000/api/requisicoes
+Content-Type: application/json
+###
+
+# Inserir nova requisicao
+POST http://localhost:3000/api/requisicoes
+Content-Type: application/json
+//x-auth-token: {{authToken}}
+
+{
+ "titulo": "Projeto dois",
+ "descricao": "Fulano",
+ "dataHoraCriada": "2020-11-25T17:32:25.000Z",
+ "status": "Online",
+ "prazoAtendimento": "2020-11-25T17:32:25.000Z",
+ "responsavel1": "62471ca99f8cbc18824387e3",
+ "responsavel2": "62471a6ca2f2fac13cd44332",
+}
+###
+
+# Alterar requisicao
+PUT http://localhost:3000/api/requisicoes
+Content-Type: application/json
+
+{
+ "_id": "6247223e394e42882b848cc9",
+ "titulo": "Projeto tres",
+ "descricao": "Fulano",
+ "dataHoraCriada": "2020-11-25T17:32:25.000Z",
+ "status": "Online",
+ "prazoAtendimento": "2020-11-25T17:32:25.000Z",
+ "responsavel": "624720de394e42882b848cba",
+ "responsavel": "62471a6ca2f2fac13cd44332",
+}
+###
+
+# Excluir um requisicao
+DELETE http://localhost:3000/api/requisicoes/6247235c394e42882b848cd8
+Content-Type: application/json
+###
+
+# Obter pelo id de requisicao
+GET http://localhost:3000/api/requisicoes/6247223e394e42882b848cc9
+Content-Type: application/json
+###
+
+# Obter requisicao filtrando
+GET http://localhost:3000/api/requisicoes/filtro/Projeto dois
+Content-Type: application/json
+###
