@@ -33,10 +33,10 @@ function UsuariosList(props) {
                             <td>{o.email}</td>
                             <td>{o.celular}</td>
                             <td>
-                                <button type="button"
-                                    class="btn btn-warning btn-sm">Alterar</button>
-                                <button type="button"
-                                    class="btn btn-danger btn-sm">Excluir</button>
+                                <button onClick={() => props.onClickEditar(o.id)}
+                                    className="btn btn-warning btn-sm">Editar</button>
+                                <button onClick={() => props.onClickExcluir(o.id)}
+                                    className="btn btn-danger btn-sm">Excluir</button>
                             </td>
                         </tr>
                     ))) : (
@@ -47,12 +47,6 @@ function UsuariosList(props) {
                     )}
                 </tbody>
             </table>
-
-
-
-
-
-
         </div>
     );
 }

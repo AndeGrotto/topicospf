@@ -28,8 +28,28 @@ function Usuarios() {
         setUsuario(initialState);
         setEditando(true);
     }
+
+    // operação editar
+
+    const onClickEditar = (id) => {
+        setUsuario(usuarios.filter((usuario) => usuario.id == id)[0]);
+        setEditando(true);
+    }
+
+
+    // operação excluir
+    const onClickExcluir = (id) => {
+        setUsuarios(usuarios.filter((usuario) => usuario.id !== id));
+    }
+
     const onClickSalvar = () => {
         console.log('Salvar ...');
+        if (usuario.id == null) { // inclussão
+            usuario.id = usuarios.length + 1
+            setUsuarios([...usuarios, usuario])
+        } else { // alteração
+            setUsuarios(usuarios.map((find) => (find.id === usuario.id ? usuario : find)))
+        }
         setEditando(false);
     }
     const onClickCancelar = () => {
@@ -42,20 +62,21 @@ function Usuarios() {
             <div>
                 <UsuariosList usuarios={usuarios}
                     onClickAtualizar={onClickAtualizar}
-                    onClickInserir={onClickInserir} />
+                    onClickInserir={onClickInserir}
+                    onClickEditar={onClickEditar}
+                    onClickExcluir={onClickExcluir} />
             </div>
         );
     } else {
         return (
             <div>
                 <UsuariosForm usuario={usuario}
-                    onClickSalvar={onClickSalvar} 
-                    onClickCancelar={onClickCancelar} />
+                    onClickSalvar={onClickSalvar}
+                    onClickCancelar={onClickCancelar}
+                    setUsuario={setUsuario} />
             </div>
         );
     }
-
-
 }
 
 export default Usuarios;
