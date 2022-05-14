@@ -13,6 +13,10 @@ html {
     -moz-osx-font-smoothing: grayscale;
   }
   
+  button {
+    margin-left: 5px;
+  }
+
   .overlay, .form-panel.one:before {
     position: absolute;
     top: 0;
