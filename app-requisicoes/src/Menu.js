@@ -10,11 +10,23 @@ function Menu() {
             command: () => { navigate("/") }
         },
         {
-            label: 'Cadastros', icon: 'pi pi-fw pi-file',
+            label: 'Cadastros', icon: 'pi pi-fw pi-id-card',
             items: [
                 {
                     label: 'Colaboradores', icon: 'pi pi-fw pi-user',
                     command: () => { navigate("/colaborador") }
+                },
+                {
+                    label: 'Solicitantes', icon: 'pi pi-fw pi-users',
+                    command: () => { navigate("/solicitante") }
+                },
+                {
+                    label: 'Tipo de Requisições', icon: 'pi pi-fw pi-file',
+                    command: () => { navigate("/tipoRequisicao") }
+                },
+                {
+                    label: 'Requisicões', icon: 'pi pi-fw pi-briefcase',
+                    command: () => { navigate("/requisicao") }
                 }
             ]
         },
