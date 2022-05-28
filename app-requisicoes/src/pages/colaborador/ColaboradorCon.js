@@ -112,6 +112,14 @@ function ColaboradorCon() {
     ColaboradorSrv.excluir(_id)
       .then((response) => {
         onClickAtualizar();
+<<<<<<< HEAD
+=======
+        toastRef.current.show({
+          severity: "success",
+          summary: "Excluído",
+          life: 2000,
+        });
+>>>>>>> f603aa32952f5ab2abe934aec5da3c93e2a5c726
       })
       .catch((e) => {
         toastRef.current.show({

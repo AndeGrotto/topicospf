@@ -7,8 +7,13 @@ const ColaboradorList = (props) => {
   const operacoesBodyTemplate = (rowData) => {
     return (
       <div>
+<<<<<<< HEAD
         <Button icon="pi pi-times" className="p-button-rounded p-button-text" aria-label="Submit" onClick={() => props.excluir(rowData._id)}/>
         <Button icon="pi pi-pencil" className="p-button-rounded p-button-text" aria-label="Editar" onClick={() => props.editar(rowData._id)}/>
+=======
+        <Button icon="pi pi-times" className="p-button-rounded p-button-danger" aria-label="Excluir" onClick={() => props.excluir(rowData._id)}/>
+        <Button icon="pi pi-pencil" className="p-button-rounded p-button-warning" aria-label="Editar" onClick={() => props.editar(rowData._id)}/>
+>>>>>>> f603aa32952f5ab2abe934aec5da3c93e2a5c726
       </div>
     )
 
