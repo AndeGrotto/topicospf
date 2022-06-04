@@ -1,26 +1,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect, useRef } from "react";
-import ColaboradorList from "./ColaboradorList";
-import ColaboradorForm from "./ColaboradorForm";
-import ColaboradorSrv from "./ColaboradorSrv";
-<<<<<<< HEAD
-=======
+import TipoRequisicaoList from "./TipoRequisicaoList";
+import TipoRequisicaoForm from "./TipoRequisicaoForm";
+import TipoRequisicaoSrv from "./TipoRequisicaoSrv";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
->>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
-function ColaboradorCon() {
-  const [colaboradores, setColaboradores] = useState([]);
-  const initialState = { id: null, nome: "", email: "", senha: "" };
-  const [colaborador, setColaborador] = useState(initialState);
+function TipoRequisicaoCon() {
+  const [tipoRequisicoes, setTipoRequisicoes] = useState([]);
+  const initialState = { id: null, descricao: ""};
+  const [tipoRequisicao, setTipoRequisicao] = useState(initialState);
   const [editando, setEditando] = useState(false);
   const toastRef = useRef();
 
@@ -29,16 +22,13 @@ function ColaboradorCon() {
   }, []);
 
   const onClickAtualizar = () => {
-    ColaboradorSrv.listar().then((response) => {
-        setColaboradores(response.data);
-<<<<<<< HEAD
-=======
+    TipoRequisicaoSrv.listar().then((response) => {
+        setTipoRequisicoes(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Colaboradores Atualizados!",
+          summary: "Tipo de Requisições Atualizadas!",
           life: 3000,
         });
->>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
       })
       .catch((e) => {
         console.log("Erro: " + e.message);
@@ -51,13 +41,13 @@ function ColaboradorCon() {
   };
 
   const inserir = () => {
-    setColaborador(initialState);
+    setTipoRequisicao(initialState);
     setEditando(true);
   };
 
   const salvar = () => {
-    if (colaborador._id == null) { // inclusão
-      ColaboradorSrv.incluir(colaborador)
+    if (tipoRequisicao._id == null) { // inclusão
+      TipoRequisicaoSrv.incluir(tipoRequisicao)
         .then((response) => {
           setEditando(false);
           onClickAtualizar();
@@ -75,7 +65,7 @@ function ColaboradorCon() {
           });
         });
     } else { // alteração
-      ColaboradorSrv.alterar(colaborador)
+      TipoRequisicaoSrv.alterar(tipoRequisicao)
         .then((response) => {
           setEditando(false);
           onClickAtualizar();
@@ -100,8 +90,8 @@ function ColaboradorCon() {
   };
 
   const editar = (id) => {
-    setColaborador(
-      colaboradores.filter((colaborador) => colaborador._id == id)[0]
+    setTipoRequisicao(
+      tipoRequisicoes.filter((tipoRequisicao) => tipoRequisicao._id == id)[0]
     );
     setEditando(true);
   };
@@ -119,23 +109,14 @@ function ColaboradorCon() {
   };
 
   const excluirConfirm = (_id) => {
-    ColaboradorSrv.excluir(_id)
+    TipoRequisicaoSrv.excluir(_id)
       .then((response) => {
         onClickAtualizar();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
         toastRef.current.show({
           severity: "success",
           summary: "Excluído",
           life: 2000,
         });
-<<<<<<< HEAD
-=======
->>>>>>> f603aa32952f5ab2abe934aec5da3c93e2a5c726
->>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
       })
       .catch((e) => {
         toastRef.current.show({
@@ -151,10 +132,10 @@ function ColaboradorCon() {
     return (
       <div>
         <ConfirmDialog />
-        <ColaboradorList
-          colaboradores={colaboradores}
-          colaborador={colaborador}
-          setColaborador={setColaborador}
+        <TipoRequisicaoList
+          tipoRequisicoes={tipoRequisicoes}
+          tipoRequisicao={tipoRequisicao}
+          setTipoRequisicao={setTipoRequisicao}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           editar={editar}
@@ -166,9 +147,9 @@ function ColaboradorCon() {
   } else {
     return (
       <div>
-        <ColaboradorForm
-          colaborador={colaborador}
-          setColaborador={setColaborador}
+        <TipoRequisicaoForm
+          tipoRequisicao={tipoRequisicao}
+          setTipoRequisicao={setTipoRequisicao}
           salvar={salvar}
           cancelar={cancelar}
         />
@@ -178,4 +159,4 @@ function ColaboradorCon() {
   }
 
 }
-export default ColaboradorCon;
+export default TipoRequisicaoCon;

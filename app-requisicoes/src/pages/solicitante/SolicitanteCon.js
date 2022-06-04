@@ -1,26 +1,19 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect, useRef } from "react";
-import ColaboradorList from "./ColaboradorList";
-import ColaboradorForm from "./ColaboradorForm";
-import ColaboradorSrv from "./ColaboradorSrv";
-<<<<<<< HEAD
-=======
+import SolicitanteList from "./SolicitanteList";
+import SolicitanteForm from "./SolicitanteForm";
+import SolicitanteSrv from "./SolicitanteSrv";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
->>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
-function ColaboradorCon() {
-  const [colaboradores, setColaboradores] = useState([]);
+function SolicitanteCon() {
+  const [solicitantes, setSolicitantes] = useState([]);
   const initialState = { id: null, nome: "", email: "", senha: "" };
-  const [colaborador, setColaborador] = useState(initialState);
+  const [solicitante, setSolicitante] = useState(initialState);
   const [editando, setEditando] = useState(false);
   const toastRef = useRef();
 
@@ -29,16 +22,13 @@ function ColaboradorCon() {
   }, []);
 
   const onClickAtualizar = () => {
-    ColaboradorSrv.listar().then((response) => {
-        setColaboradores(response.data);
-<<<<<<< HEAD
-=======
+    SolicitanteSrv.listar().then((response) => {
+        setSolicitantes(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Colaboradores Atualizados!",
+          summary: "Solicitantes Atualizados!",
           life: 3000,
         });
->>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
       })
       .catch((e) => {
         console.log("Erro: " + e.message);
@@ -51,13 +41,13 @@ function ColaboradorCon() {
   };
 
   const inserir = () => {
-    setColaborador(initialState);
+    setSolicitante(initialState);
     setEditando(true);
   };
 
   const salvar = () => {
-    if (colaborador._id == null) { // inclusão
-      ColaboradorSrv.incluir(colaborador)
+    if (solicitante._id == null) { // inclusão
+      SolicitanteSrv.incluir(solicitante)
         .then((response) => {
           setEditando(false);
           onClickAtualizar();
@@ -75,7 +65,7 @@ function ColaboradorCon() {
           });
         });
     } else { // alteração
-      ColaboradorSrv.alterar(colaborador)
+      SolicitanteSrv.alterar(solicitante)
         .then((response) => {
           setEditando(false);
           onClickAtualizar();
@@ -100,8 +90,8 @@ function ColaboradorCon() {
   };
 
   const editar = (id) => {
-    setColaborador(
-      colaboradores.filter((colaborador) => colaborador._id == id)[0]
+    setSolicitante(
+      solicitantes.filter((solicitante) => solicitante._id == id)[0]
     );
     setEditando(true);
   };
@@ -119,23 +109,14 @@ function ColaboradorCon() {
   };
 
   const excluirConfirm = (_id) => {
-    ColaboradorSrv.excluir(_id)
+    SolicitanteSrv.excluir(_id)
       .then((response) => {
         onClickAtualizar();
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
->>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
         toastRef.current.show({
           severity: "success",
           summary: "Excluído",
           life: 2000,
         });
-<<<<<<< HEAD
-=======
->>>>>>> f603aa32952f5ab2abe934aec5da3c93e2a5c726
->>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
       })
       .catch((e) => {
         toastRef.current.show({
@@ -151,10 +132,10 @@ function ColaboradorCon() {
     return (
       <div>
         <ConfirmDialog />
-        <ColaboradorList
-          colaboradores={colaboradores}
-          colaborador={colaborador}
-          setColaborador={setColaborador}
+        <SolicitanteList
+          solicitantes={solicitantes}
+          solicitante={solicitante}
+          setSolicitante={setSolicitante}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
           editar={editar}
@@ -166,9 +147,9 @@ function ColaboradorCon() {
   } else {
     return (
       <div>
-        <ColaboradorForm
-          colaborador={colaborador}
-          setColaborador={setColaborador}
+        <SolicitanteForm
+          solicitante={solicitante}
+          setSolicitante={setSolicitante}
           salvar={salvar}
           cancelar={cancelar}
         />
@@ -178,4 +159,4 @@ function ColaboradorCon() {
   }
 
 }
-export default ColaboradorCon;
+export default SolicitanteCon;

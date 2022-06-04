@@ -12,7 +12,14 @@
     "primereact": "^8.0.0-rc.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+<<<<<<< HEAD
     "react-hook-form": "^7.31.3",
+=======
+<<<<<<< HEAD
+    "react-hook-form": "^7.31.3",
+=======
+>>>>>>> f603aa32952f5ab2abe934aec5da3c93e2a5c726
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
     "react-router-dom": "^6.3.0",
     "react-scripts": "^5.0.1",
     "react-transition-group": "^4.4.2",

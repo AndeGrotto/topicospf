@@ -1,6 +1,7 @@
 @apiUrl = http://localhost:3000/api
 //{{apiUrl}}
 
+<<<<<<< HEAD
 # Autenticação de usuário
 POST {{apiUrl}}/login
 Content-Type: application/json
@@ -10,6 +11,8 @@ Content-Type: application/json
 }
 ###
 
+=======
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
 # Obter a lista de colaboradores
 GET {{apiUrl}}/colaboradores
 Content-Type: application/json

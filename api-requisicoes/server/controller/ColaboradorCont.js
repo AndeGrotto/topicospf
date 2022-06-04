@@ -1,5 +1,8 @@
 const Colaborador = require("../model/ColaboradorSchema");
+<<<<<<< HEAD
 const bcrypt = require("bcrypt");
+=======
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
 
 module.exports = {
   listar: async (req, res) => {
@@ -8,6 +11,7 @@ module.exports = {
     }).sort({ nome: 1 }); // -1 decrescente 1 crescente
   },
 
+<<<<<<< HEAD
   login: async (req, res) => {
     Colaborador.findOne({ email: req.body.email }, async function (err, obj) {
       if (err) return res.status(400).send(err);
@@ -30,6 +34,10 @@ module.exports = {
     let obj = new Colaborador(req.body);
     const salt = await bcrypt.genSalt(Number(process.env.BCRYPT_SALT));
     obj.senha = await bcrypt.hash(obj.senha, salt);
+=======
+  incluir: async (req, res) => {
+    let obj = new Colaborador(req.body);
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
     obj.save((err, obj) => {
       err ? res.status(400).send(err) : res.status(200).json(obj);
     });
@@ -37,8 +45,11 @@ module.exports = {
 
   alterar: async (req, res) => {
     let obj = new Colaborador(req.body);
+<<<<<<< HEAD
     const salt = await bcrypt.genSalt(Number(process.env.BCRYPT_SALT));
     obj.senha = await bcrypt.hash(obj.senha, salt);
+=======
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
     Colaborador.updateOne({ _id: obj._id }, obj, function (err) {
       err ? res.status(400).send(err) : res.status(200).json(obj);
     });

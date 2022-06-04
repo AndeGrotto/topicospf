@@ -1,18 +1,27 @@
 @apiUrl = http://localhost:3000/api
 //{{apiUrl}}
+<<<<<<< HEAD
 @authToken = 
+=======
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
 
 # Obter a lista de atividades
 GET {{apiUrl}}/atividades
 Content-Type: application/json
+<<<<<<< HEAD
 x-auth-token: {{authToken}}
+=======
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
 ###
 
 # Inserir nova atividade
 POST {{apiUrl}}/atividades
 Content-Type: application/json
+<<<<<<< HEAD
 x-auth-token: {{authToken}}
 
+=======
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
 
 {
  "titulo": "Atividade teste", 
@@ -29,7 +38,10 @@ x-auth-token: {{authToken}}
 # Alterar uma atividade
 PUT {{apiUrl}}/atividades
 Content-Type: application/json
+<<<<<<< HEAD
 x-auth-token: {{authToken}}
+=======
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
 
 {
  "_id": "623f9b20d34bd647e4c458f3",   

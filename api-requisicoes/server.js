@@ -5,8 +5,11 @@ const express = require("express");
 const app = express();
 app.use(express.json()); // para tratar json
 
+<<<<<<< HEAD
 require('dotenv').config(); 
 
+=======
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
 // definir porta para a API de serviço
 const port = process.env.PORT || 3000;
 

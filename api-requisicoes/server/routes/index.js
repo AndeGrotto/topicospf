@@ -10,6 +10,7 @@ routes.use(cors({ origin: "*" }));
 const colaboradorRout = require("./ColaboradorRout.js");
 routes.use("/api", colaboradorRout);
 
+<<<<<<< HEAD
 const jwt = require("jsonwebtoken");
 routes.use(function (req, res, next) { // interceptar as requisições a validar o token
     try {
@@ -30,6 +31,8 @@ routes.use(function (req, res, next) { // interceptar as requisições a validar
 });
 
 
+=======
+>>>>>>> bddcea678cc21022941ce43ecf5cf2af30331a14
 const solicitanteRout = require("./SolicitanteRout.js");
 routes.use("/api", solicitanteRout);
 
