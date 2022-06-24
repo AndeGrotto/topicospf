@@ -9,11 +9,6 @@ import Login from './pages/login/LoginForm'
 
 const Home = lazy(() => import('./pages/home/Home'));
 const ColaboradorCon = lazy(() => import('./pages/colaborador/ColaboradorCon'));
-const AtividadeCon = lazy(() => import('./pages/atividade/AtividadeCon'));
-const SolicitanteCon = lazy(() => import('./pages/solicitante/SolicitanteCon'));
-const TipoRequisicaoCon = lazy(() => import('./pages/tiporequisicao/TipoRequisicaoCon'));
-const AndamentoCon = lazy(() => import('./pages/andamento/AndamentoCon'));
-const RequisicaoCon = lazy(() => import('./pages/requisicao/RequisicaoCon'));
 
 function App() {
   
@@ -35,11 +30,6 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/colaborador" element={<ColaboradorCon />} />
-          <Route path="/atividade" element={<AtividadeCon />} />
-          <Route path="/solicitante" element={<SolicitanteCon />} />
-          <Route path="/tipoRequisicao" element={<TipoRequisicaoCon />} />
-          <Route path="/andamento" element={<AndamentoCon />} />
-          <Route path="/requisicao" element={<RequisicaoCon />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

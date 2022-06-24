@@ -23,9 +23,9 @@ POST {{apiUrl}}/colaboradores
 Content-Type: application/json
 
 {
- "nome": "Otávio Colaborador", 
- "email": "otaviocolaborador@upf.br",
- "senha": "123"
+ "nome": "Admin", 
+ "email": "admin@upf.br",
+ "senha": "admin"
 }
 ###
 
