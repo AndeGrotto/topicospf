@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 import React, { useState, useRef, useEffect} from "react";
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { RadioButton } from 'primereact/radiobutton';
 import { Dropdown } from 'primereact/dropdown';
 import { useForm } from "react-hook-form";
+=======
+import React from "react";
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
+import { RadioButton } from 'primereact/radiobutton';
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 
 const RequisicaoForm = (props) => {
 
@@ -12,6 +19,7 @@ const RequisicaoForm = (props) => {
     props.setRequisicao({ ...props.requisicao, [id]: value });
   };
 
+<<<<<<< HEAD
   const [solicitante, setSolicitante] = useState([]);
   const [tipoRequisicao, setTipoRequisicao] = useState([]);
 
@@ -28,6 +36,13 @@ const RequisicaoForm = (props) => {
       <div>
         <div className="card">
           <h5>Cadastro de Requisicão</h5>
+=======
+  return (
+    <form>
+      <div>
+        <div className="card">
+          <h5>Cadastro de Tipo de Requisicão</h5>
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
           <div className="p-fluid grid formgrid">
 
             <div className="field col-12 md:col-4">
@@ -62,6 +77,10 @@ const RequisicaoForm = (props) => {
 
               <RadioButton id="status" name="status" value="Finalizada" defaultValue={props.requisicao.status} onChange={handleInputChange} checked={props.requisicao.status === 'Finalizada'} />
               <label>Finalizada</label><br />
+<<<<<<< HEAD
+=======
+
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
             </div>
 
             <div className="field col-12 md:col-4">
@@ -70,6 +89,7 @@ const RequisicaoForm = (props) => {
                 onChange={handleInputChange} />
             </div>
 
+<<<<<<< HEAD
             <div className="field col-12 md:col-4">
               <label htmlFor="Solicitante">Solicitante</label>
               <Dropdown optionLabel="nome" value={solicitante} options={props.solicitantes} onChange={(e) => setSolicitante(e.value)} placeholder="Selecione o colaborador" />
@@ -80,12 +100,18 @@ const RequisicaoForm = (props) => {
                 <Dropdown optionLabel="descricao" value={tipoRequisicao} options={props.tipoRequisicoes} onChange={(e) => setTipoRequisicao(e.value)} placeholder="Selecione o tipo da requisição"/>
             </div>
 
+=======
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
           </div>
         </div>
       </div>
 
       <div>
+<<<<<<< HEAD
         <Button label="Salvar" icon="pi pi-save"
+=======
+        <Button label="Salvar" icon="pi pi-save" onClick={props.salvar}
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
           className="p-button-secondary p-button-text" />
         <Button label="Cancelar" icon="pi pi-times-circle" onClick={props.cancelar}
           className="p-button-secondary p-button-text" />

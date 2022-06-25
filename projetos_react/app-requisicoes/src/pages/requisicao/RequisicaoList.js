@@ -19,7 +19,11 @@ const RequisicaoList = (props) => {
 
   const header = (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+<<<<<<< HEAD
       Listagem de Requisicões
+=======
+      Listagem de Tipos de Requisicões
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
       <Button icon="pi pi-file-o" label="Inserir" className="p-button-sm" onClick={() => props.inserir()} />
     </div>
   );
@@ -44,8 +48,11 @@ const RequisicaoList = (props) => {
         <Column field="dataHoraCriada" header="Data e Hora Criada" sortable filter></Column>
         <Column field="status" header="Status" sortable filter></Column>
         <Column field="prazoAtendimento" header="Prazo de Atendimento" sortable filter></Column>
+<<<<<<< HEAD
         <Column field="solicitante.nome" header="Solicitante" sortable filter ></Column>
         <Column field="tipoRequisicao.descricao" header="Tipo de Requisição" sortable filter ></Column>
+=======
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
         <Column header="Operações" body={operacoesBodyTemplate}></Column>
       </DataTable>
 

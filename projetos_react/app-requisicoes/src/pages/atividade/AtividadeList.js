@@ -42,8 +42,11 @@ const AtividadeList = (props) => {
         <Column field="titulo" header="Título" sortable filter></Column>
         <Column field="descricao" header="Descrição" sortable filter></Column>
         <Column field="status" header="Status" sortable filter></Column>
+<<<<<<< HEAD
         <Column field="colaborador.nome" header="Colaborador" sortable filter ></Column>
         <Column field="requisicao.titulo" header="Requisição" sortable filter ></Column>
+=======
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
         <Column header="Operações" body={operacoesBodyTemplate}></Column>
       </DataTable>
 

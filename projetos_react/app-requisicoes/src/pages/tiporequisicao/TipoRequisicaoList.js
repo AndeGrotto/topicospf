@@ -19,7 +19,11 @@ const TipoRequisicaoList = (props) => {
 
   const header = (
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+<<<<<<< HEAD
       Listagem de Tipos de Requisicões
+=======
+      Listagem de Requisicões
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
       <Button icon="pi pi-file-o" label="Inserir" className="p-button-sm" onClick={() => props.inserir()} />
     </div>
   );

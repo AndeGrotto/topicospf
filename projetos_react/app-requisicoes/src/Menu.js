@@ -10,6 +10,10 @@ function Menu() {
       label: 'Home', icon: 'pi pi-home',
       command: () => { navigate("/") }
     },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 
     {
       label: 'Cadastros', icon: 'pi pi-fw pi-file',
@@ -41,6 +45,15 @@ function Menu() {
       ]
     },
     
+<<<<<<< HEAD
+=======
+=======
+    {
+      label: 'Colaboradores', icon: 'pi pi-id-card',
+      command: () => { navigate("/colaborador") }
+    },
+>>>>>>> d2818eb63f2ffc6ac902b1d26ddc96b7fb51e411
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
     {
       label: 'Sair', icon: 'pi pi-sign-out',
       command: () => {

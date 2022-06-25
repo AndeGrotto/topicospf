@@ -3,8 +3,11 @@ import React, { useState, useEffect, useRef } from "react";
 import AtividadeList from "./AtividadeList";
 import AtividadeForm from "./AtividadeForm";
 import AtividadeSrv from "./AtividadeSrv";
+<<<<<<< HEAD
 import ColaboradorSrv from "../colaborador/ColaboradorSrv";
 import RequisicaoSrv from "../requisicao/RequisicaoSrv";
+=======
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
@@ -14,6 +17,7 @@ function AtividadeCon() {
   const [atividades, setAtividades] = useState([]);
   const initialState = { id: null, titulo: "", descricao: "", status: "", prazo: "", agendaInicio: "", dataHoraTermino: ""};
   const [atividade, setAtividade] = useState(initialState);
+<<<<<<< HEAD
   const [colaboradores, setColaboradores] = useState(initialState);
   const [requisicoes, setRequisicoes] = useState(initialState);
   const [editando, setEditando] = useState(false);
@@ -26,6 +30,27 @@ function AtividadeCon() {
     onClickAtualizarRequisicao(); // ao inicializar execula método para atualizar
   }, []);
 
+=======
+  const [editando, setEditando] = useState(false);
+  const toastRef = useRef();
+
+  const [chefes, setChefes] = useState([]);
+
+
+  useEffect(() => {
+    onClickAtualizar(); // ao inicializar execula método para atualizar
+    onClickAtualizarChefes(); // ao inicializar execula método para atualizar
+  }, []);
+
+  const onClickAtualizarChefes = () => {
+    AtividadeSrv.listar().then((response) => {
+      setChefes(response.data);
+    })
+    .catch((e) => {
+      console.log("Erro: " + e.message);
+    });
+  };
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 
   const onClickAtualizar = () => {
     AtividadeSrv.listar().then((response) => {
@@ -41,6 +66,7 @@ function AtividadeCon() {
       });
   };
 
+<<<<<<< HEAD
   const onClickAtualizarColaborador = () => {
     ColaboradorSrv.listar().then((response) => {
         setColaboradores(response.data);
@@ -69,6 +95,8 @@ function AtividadeCon() {
       });
   };
 
+=======
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
   const inserir = () => {
     setAtividade(initialState);
     setEditando(true);
@@ -179,12 +207,18 @@ function AtividadeCon() {
         <AtividadeForm
           atividade={atividade}
           setAtividade={setAtividade}
+<<<<<<< HEAD
           colaboradores={colaboradores}
           setColaboradores={setColaboradores}
           requisicoes={requisicoes}
           setRequisicoes={setRequisicoes}
           salvar={salvar}
           cancelar={cancelar}
+=======
+          salvar={salvar}
+          cancelar={cancelar}
+          chefes={chefes}
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
         />
         <Toast ref={toastRef} />
       </div>

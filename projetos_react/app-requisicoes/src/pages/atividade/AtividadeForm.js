@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 import React, { useState, useRef, useEffect } from "react";
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { RadioButton } from 'primereact/radiobutton';
 import { Dropdown } from 'primereact/dropdown';
 import { useForm } from "react-hook-form";
+=======
+import React from "react";
+import { InputText } from 'primereact/inputtext';
+import { Button } from 'primereact/button';
+import { RadioButton } from 'primereact/radiobutton';
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 
 const AtividadeForm = (props) => {
 
@@ -12,6 +19,7 @@ const AtividadeForm = (props) => {
     props.setAtividade({ ...props.atividade, [id]: value });
   };
 
+<<<<<<< HEAD
   const [colaborador, setColaborador] = useState([]);
   const [requisicao, setRequisicao] = useState([]);
 
@@ -24,6 +32,10 @@ const AtividadeForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+=======
+  return (
+    <form>
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
       <div>
         <div className="card">
           <h5>Cadastro de Atividades</h5>
@@ -76,6 +88,7 @@ const AtividadeForm = (props) => {
 
             </div>
 
+<<<<<<< HEAD
             <div className="field col-12 md:col-4">
               <label htmlFor="Colaborador">Colaborador</label>
               <Dropdown optionLabel="nome" value={colaborador} options={props.colaboradores} onChange={(e) => setColaborador(e.value)} placeholder="Selecione o colaborador" />
@@ -85,6 +98,9 @@ const AtividadeForm = (props) => {
               <label htmlFor="Requisicao">Requisição</label>
               <Dropdown optionLabel="titulo" value={requisicao} options={props.requisicoes} onChange={(e) => setRequisicao(e.value)} placeholder="Selecione a requisição" />
             </div>
+=======
+
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 
 
 
@@ -95,7 +111,11 @@ const AtividadeForm = (props) => {
       </div>
 
       <div>
+<<<<<<< HEAD
         <Button label="Salvar" icon="pi pi-save"
+=======
+        <Button label="Salvar" icon="pi pi-save" onClick={props.salvar}
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
           className="p-button-secondary p-button-text" />
         <Button label="Cancelar" icon="pi pi-times-circle" onClick={props.cancelar}
           className="p-button-secondary p-button-text" />

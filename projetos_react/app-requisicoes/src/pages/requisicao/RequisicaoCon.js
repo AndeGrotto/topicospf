@@ -3,16 +3,24 @@ import React, { useState, useEffect, useRef } from "react";
 import RequisicaoList from "./RequisicaoList";
 import RequisicaoForm from "./RequisicaoForm";
 import RequisicaoSrv from "./RequisicaoSrv";
+<<<<<<< HEAD
 import SolicitanteSrv from "../solicitante/SolicitanteSrv";
 import TipoRequisicaoSrv from "../tiporequisicao/TipoRequisicaoSrv";
+=======
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 function RequisicaoCon() {
   const [requisicoes, setRequisicoes] = useState([]);
   const initialState = { id: null, titulo: "", descricao: "", dataHoraCriada: "", status: "", prazoAtendimento: ""};
   const [requisicao, setRequisicao] = useState(initialState);
+<<<<<<< HEAD
   const [tipoRequisicoes, setTipoRequisicoes] = useState([]);
   const [solicitantes, setSolicitantes] = useState([]);
   const [editando, setEditando] = useState(false);
@@ -25,6 +33,27 @@ function RequisicaoCon() {
     onClickAtualizarSolicitante(); // ao inicializar execula método para atualizar
   }, []);
 
+=======
+  const [editando, setEditando] = useState(false);
+  const toastRef = useRef();
+
+  const [chefes, setChefes] = useState([]);
+
+
+  useEffect(() => {
+    onClickAtualizar(); // ao inicializar execula método para atualizar
+    onClickAtualizarChefes(); // ao inicializar execula método para atualizar
+  }, []);
+
+  const onClickAtualizarChefes = () => {
+    RequisicaoSrv.listar().then((response) => {
+      setChefes(response.data);
+    })
+    .catch((e) => {
+      console.log("Erro: " + e.message);
+    });
+  };
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 
   const onClickAtualizar = () => {
     RequisicaoSrv.listar().then((response) => {
@@ -40,6 +69,7 @@ function RequisicaoCon() {
       });
   };
 
+<<<<<<< HEAD
   const onClickAtualizarTipoRequisicao = () => {
     TipoRequisicaoSrv.listar().then((response) => {
         setTipoRequisicoes(response.data);
@@ -68,6 +98,8 @@ function RequisicaoCon() {
       });
   };
 
+=======
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
   const inserir = () => {
     setRequisicao(initialState);
     setEditando(true);
@@ -178,12 +210,18 @@ function RequisicaoCon() {
         <RequisicaoForm
           requisicao={requisicao}
           setRequisicao={setRequisicao}
+<<<<<<< HEAD
           tipoRequisicoes={tipoRequisicoes}
           setTipoRequisicoes={setTipoRequisicoes}
           solicitantes={solicitantes}
           setSolicitantes={setSolicitantes}
           salvar={salvar}
           cancelar={cancelar}
+=======
+          salvar={salvar}
+          cancelar={cancelar}
+          chefes={chefes}
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
         />
         <Toast ref={toastRef} />
       </div>

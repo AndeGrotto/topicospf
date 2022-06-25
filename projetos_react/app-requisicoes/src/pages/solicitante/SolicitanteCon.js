@@ -15,12 +15,30 @@ function SolicitanteCon() {
   const [editando, setEditando] = useState(false);
   const toastRef = useRef();
 
+<<<<<<< HEAD
+=======
+  const [chefes, setChefes] = useState([]);
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 
 
   useEffect(() => {
     onClickAtualizar(); // ao inicializar execula método para atualizar
+<<<<<<< HEAD
   }, []);
 
+=======
+    onClickAtualizarChefes(); // ao inicializar execula método para atualizar
+  }, []);
+
+  const onClickAtualizarChefes = () => {
+    SolicitanteSrv.listar().then((response) => {
+      setChefes(response.data);
+    })
+    .catch((e) => {
+      console.log("Erro: " + e.message);
+    });
+  };
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
 
   const onClickAtualizar = () => {
     SolicitanteSrv.listar().then((response) => {
@@ -148,6 +166,10 @@ function SolicitanteCon() {
           setSolicitante={setSolicitante}
           salvar={salvar}
           cancelar={cancelar}
+<<<<<<< HEAD
+=======
+          chefes={chefes}
+>>>>>>> 938c7aa327326b3cd18c898ab61b49e676e08a34
         />
         <Toast ref={toastRef} />
       </div>
