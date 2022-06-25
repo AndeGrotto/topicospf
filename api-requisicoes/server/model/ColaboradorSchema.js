@@ -5,6 +5,11 @@ const ColaboradorSchema = new mongoose.Schema({
   nome: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   senha: String,
+  chefe: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Colaborador",
+    require: false,
+  },
 });
 
 ColaboradorSchema.methods.generateAuthToken = function () {

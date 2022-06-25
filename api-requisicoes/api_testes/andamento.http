@@ -1,14 +1,17 @@
 @apiUrl = http://localhost:3000/api
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MmEzZGQ4OTNmMDQ0NDhiMDI5ZDdjZDgiLCJub21lIjoiQWRtaW4iLCJpYXQiOjE2NTYxMTM2NzQsImV4cCI6MTY1NjExNzI3NH0._Q_4fLWyglCf3lVeJ3pOlyYTca1jOqqaQnw_AQW-DW4
 //{{apiUrl}}
 
 # Obter a lista de andamentos
 GET {{apiUrl}}/andamentos
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Inserir novo andamento
 POST {{apiUrl}}/andamentos
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "dataHora": "2022-03-27",
@@ -22,6 +25,7 @@ Content-Type: application/json
 # Alterar um andamento
 PUT {{apiUrl}}/andamentos
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
  "_id": "623fa2f6050c92172ca99545",   
@@ -36,14 +40,17 @@ Content-Type: application/json
 # Excluir um andamento
 DELETE {{apiUrl}}/andamentos/623fa2bc050c92172ca9953d
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Obter pelo id de andamento
 GET {{apiUrl}}/andamentos/623fa2bc050c92172ca9953d
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 
 # Obter andamentos filtrando
 GET {{apiUrl}}/andamentos/filtro/ovo
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
