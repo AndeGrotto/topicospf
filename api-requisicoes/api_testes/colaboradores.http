@@ -1,0 +1,65 @@
+@apiUrl = http://localhost:3000/api
+@authToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjdlZTk1MWFkZGMwNDU4NTMyNzhkNzYiLCJub21lIjoiRnVsYW5vIGNvbSBiY3J5cHQiLCJpYXQiOjE2NTQzMDIyOTUsImV4cCI6MTY1NDMwNTg5NX0.B8LM5_zraMC-RegJLrw4HNi6fcJuHaKzCQ1Jev4pY0Y
+//{{apiUrl}}
+
+
+# Autenticação de usuário 
+POST {{apiUrl}}/login
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "email": "admin@upf.br",
+    "senha": "admin"
+}
+###
+
+
+# Obter a lista de colaboradores
+GET {{apiUrl}}/colaboradores
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+# Inserir novo colaborador
+POST {{apiUrl}}/colaboradores
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "nome": "Admin", 
+ "email": "admin@upf.br",
+ "senha": "admin"
+}
+###
+
+# Alterar colaborador
+PUT {{apiUrl}}/colaboradores
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+ "_id": "627ee951addc045853278d76",
+ "nome": "Fulano com bcrypt", 
+ "email": "fulano@upf.br",
+ "senha": "123"
+}
+###
+
+# Excluir um colaborador
+DELETE {{apiUrl}}/colaboradores/623a61ca1b44b7e43f56850e
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+# Obter pelo id de colaborador
+GET {{apiUrl}}/colaboradores/623a61ca1b44b7e43f56850e
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+
+# Obter colaborador filtrando
+GET {{apiUrl}}/colaboradores/filtro/teste
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
